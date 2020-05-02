@@ -1,30 +1,27 @@
-# rest-quarkus project
+# CRUD REST com Quarkus
+Este projeto foi desenvolvido para testar a implementação e eficiência do Quarkus, framework Java nativo do Kubernetes feito para a GraalVM.
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Fontes
+Para implementar este projeto foram seguidas as instruções de: 
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+* [JUG Vale - Introdução ao Quarkus.io [CRUD]](https://www.youtube.com/watch?v=WmGkErE00H0)
+* [Tutorial: Criando um CRUD utilizando Quarkus Java + REST + CDI + Panache, Hibernate com Postgres (Docker) + Postman](https://medium.com/@marcus.paulo/tutorial-criando-um-crud-utilizando-quarkus-java-rest-cdi-panache-hibernate-com-postgres-59793e0d7162)
+* [Quarkus - Building a Native Executable](https://quarkus.io/guides/building-native-image)
+* [Site oficial](https://quarkus.io/)
 
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
+## Comandos para execução e compilação
+* Compila e executa o projeto
 ```
-./mvnw quarkus:dev
+mvnw compile quarkus:dev
 ```
+* Executa o jar que está no diretório 
+```
+java -jar rest-quarkus-1.0-SNAPSHOT-native-image-source-jar
+```
+* Constrói um container Docker do projeto
+```
+./mvnw package -Pnative -Dquarkus.native.container-runtime=docker
+```
+## [Postman](https://documenter.getpostman.com/view/9737508/SzmZcfPj)
 
-## Packaging and running the application
-
-The application can be packaged using `./mvnw package`.
-It produces the `rest-quarkus-1.0-SNAPSHOT-runner.jar` file in the `/target` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/lib` directory.
-
-The application is now runnable using `java -jar target/rest-quarkus-1.0-SNAPSHOT-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: `./mvnw package -Pnative`.
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: `./mvnw package -Pnative -Dquarkus.native.container-build=true`.
-
-You can then execute your native executable with: `./target/rest-quarkus-1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
+:shipit:
