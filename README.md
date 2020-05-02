@@ -18,7 +18,7 @@ mvnw compile quarkus:dev
 ```
 java -jar rest-quarkus-1.0-SNAPSHOT-native-image-source-jar
 ```
-* Constrói um container Docker do projeto
+* Compila o projeto para uma imagem nativa Docker
 ```
 ./mvnw package -Pnative -Dquarkus.native.container-runtime=docker
 ```
